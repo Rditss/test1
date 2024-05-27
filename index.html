@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Japemethe</title>
+</head>
+
+<body>
+    <div class="container">
+        <form onsubmit="login(event)">
+            <h1>Login</h1>
+            <input type="text" id="username" placeholder="Alamat email" required>
+            <input type="password" id="password" placeholder="Kata sandi" required>
+            <div class="checkbox">
+                <input type="checkbox" id="rememberMe">
+                <label for="rememberMe">Ingat Saya?</label>
+            </div>
+            <br>
+
+            <div class="links">
+                <a href="apkdaftar.html">Belum Memiliki Akun?</a>
+                <a href="apkresetpw.html">Lupa Password?</a>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function login(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'admjape' && password === 'adm123') {
+                window.location.href = 'apkadmin.html';
+            } else {
+                window.location.href = 'apkhome.html';
+            }
+        }
+    </script>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url(Premium\ Photo\ _\ Simple\ white\ background\ with\ smooth\ lines\ in\ light\ colors.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        width: 400px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .checkbox {
+        display: flex;
+        align-items: center;
+    }
+
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
+
+    button {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    a {
+        text-decoration: none;
+        color: #0061ca;
+    }
+</style>
+
+</body>
+
+</html>

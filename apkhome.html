@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Halaman Beranda</title>
+</head>
+
+<body>
+    <header style="background-color: #222; color: #fff; padding: 20px; text-align: center;">
+        <h1 style="font-size: 36px;">Selamat Datang di Japemethe</h1>
+    </header>
+
+    <nav style="background-color: #444; padding: 10px; text-align: center;">
+        <a href="apk.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Menu</a>
+        <a href="apktentangkami.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Tentang Kami</a>
+        <a href="apkreservasi.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Reservasi</a>
+        <a href="apkulasan.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Ulasan</a>
+        <a href="apkkontak.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Kontak</a>
+        
+    </nav>
+
+    <div class="container">
+        <div id="welcomeMessage" style="background-color: #f4f4f4; padding: 20px; border-radius: 5px; text-align: center; margin-bottom: 20px;">
+            <h2 style="font-size: 24px;">Selamat datang di Japemethe, Selamat makan!!</h2>
+            <h2 style="font-size: 24px;">Promo Yang Tersedia!!</h2>
+        </div>
+        
+        <div id="promoContainer"></div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            displayPromos();
+        }
+
+        function displayPromos() {
+            var promos = JSON.parse(localStorage.getItem("promos")) || [];
+
+            var promoContainer = document.getElementById("promoContainer");
+
+            promoContainer.innerHTML = "";
+
+            promos.forEach(function (promoText) {
+                var promoElement = document.createElement("div");
+                promoElement.className = "promoItem";
+                promoElement.innerText = promoText;
+                promoContainer.appendChild(promoElement);
+            });
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(Download\ premium\ image\ of\ White\ wood\ textured\ mobile\ wallpaper\ by\ Nunny\ about\ instagram\ story\ plain\ background\,\ texture\ background\,\ story\ template\,\ instagram\ story\ plain\ background\ white\,\ and\ free\ iphone\ 2252223.jpeg);
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .promoItem {
+            background-color: #2dce0d;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px;
+            font-size: 18px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .promoItem:hover {
+            transform: scale(1.05);
+            background-color: #318102;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</body>
+
+</html>
